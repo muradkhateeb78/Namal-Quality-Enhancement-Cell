@@ -31,7 +31,7 @@
 	</head>
 	
 	<body>
-	<!--Here starts the php code to retrieve data from the database-->
+	<!--Here starts the php code to retrieve data from the database that we have designed for the project-->
 	<?php
 		class ReaingFromDatabase
 		{
