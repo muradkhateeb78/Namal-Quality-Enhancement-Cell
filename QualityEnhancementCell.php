@@ -31,6 +31,7 @@
 	</head>
 	
 	<body>
+	<!--Here starts the php code-->
 	<?php
 		class ReaingFromDatabase
 		{
