@@ -1,0 +1,1 @@
+if your are adding sliding select bar, don't change the radio buttons or anything else, otherwise it will induce errors in the php code, write the code of sliding select bar and leave it as it is, i will modify that, get it?
