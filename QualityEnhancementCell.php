@@ -25,7 +25,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="style.css">
-		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<title>Namal Feedback</title>
 		
 	</head>
@@ -87,11 +87,7 @@
 					<div id="task1" class="tab-pane fade in active">
 						<form action="cboxe.php" method="post">
 							<fieldset style="padding-top:20px;">
-								<div id="alert">
-									<h4 align="center" color="yellow"><strong>Task 1</strong></h4>
-									<p align="center">Check appropriate checkboxes relevant to following comment</p>
-								</div>
-								<div class="form-group" style="padding-top:21px;">
+								<div class="form-group" style="padding-top:10px;">
 									<label class=" control-label" for="textarea">Comment</label>
 									<div class="" style="padding-top:2px;">                
 										<textarea class="form-control" id="comment" name="textarea" placeholder= "<?php echo $sentence; ?>"></textarea>
@@ -132,6 +128,33 @@
 										<button id="nextComment" onclick="<?php $read -> button1Clicked(); ?>" name="submitbutton" class="btn btn-primary">Next Comment</button>
 										<button id="skipComment" name="skipbutton" class="btn btn-primary">Skip Comment</button>
 									</div>
+									<ul class="list-inline" align="center" style="padding-top:5px;">
+										<li id="subCount1" class="show" onclick="showCount1()"><a href="#" onclick="showCount1()">Submission Count</a></li>
+										<div id="showT1Count" style="display:none;">
+											<div class="row">
+												<div class="col-xs-6" style="text-align:right; color:white;"><strong>Submit Count</strong></div>
+												<div class="col-xs-6" style="text-align:left; color:white;"><strong>Skip Count</strong></div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6" style="text-align:right; color:white;"><strong>36</strong></div>
+												<div class="col-xs-6" style="text-align:left; color:white;"><strong>20</strong></div>
+											</div>
+											<!--table  width="300px">
+												<thead>
+												  <tr>
+													<th>Submit Count</th>
+													<th>Skip Count</th>
+												  </tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>2</td>
+													</tr>
+												</tbody-->
+											</table>
+										</div>
+									</ul>
 								</div>
 							</fieldset>
 						</form>
@@ -140,11 +163,7 @@
 					<div id="task2" class="tab-pane fade">
 						<form action="cboxe.php" method="post">
 							<fieldset style="padding-top:20px;">
-								<div id="alert">
-									<h4 align="center"><strong>Task 2</strong></h4>
-									<p align="center">Assign Score and Select Subject and Predicte</p>
-								</div>
-								<div class="form-group" style="padding-top:20px;">
+								<div class="form-group" style="padding-top:10px;">
 									<label class=" control-label" for="textarea">Comment</label>
 									<div class="" style="padding-top:2px;">                
 										<textarea class="form-control" id="comment" name="textarea" placeholder="<?php echo $sentence2; ?>"></textarea>
@@ -152,11 +171,11 @@
 								</div>
 								<div class="form-group">
 									<label>Subject</label>
-									<input class="form-control inputField" id="subject" name="subject" placeholder="Teacher/Module/..">
+									<input class="form-control inputField" id="subject" name="subject" placeholder="Teacher/Module/.." required>
 								</div>
 								<div class="form-group">
 									<label>Predicate</label>
-									<input class="form-control inputField" id="predicate" name="predicate" placeholder="Teacher/Module/..">
+									<input class="form-control inputField" id="predicate" name="predicate" placeholder="Teacher/Module/.." required>
 								</div>
 								<div class="form-group">
 									<label class=" control-label" for="radios">Select Score</label>
@@ -179,7 +198,7 @@
 										</label>
 										<label class="radio-inline" for="radios-4">
 											<input name="radios" id="radios-4" value="5" type="radio">
-											Very Positive (5)
+											5 (Very Positive)
 										</label>
 									</div>
 								</div>
@@ -188,6 +207,33 @@
 										<button id="nextComment2" onclick="<?php $read -> button2Clicked();?>" name="submitbutton2" class="btn btn-primary">Next Comment</button>
 										<button id="skipComment2" name="skipbutton2" class="btn btn-primary">Skip Comment</button>
 									</div>
+									<ul class="list-inline" align="center" style="padding-top:5px;">
+										<li id="subCount2" class="show" onclick="showCount2()"><a href="#" onclick="showCount2()">Submission Count</a></li>
+										<div id="showT2Count" style="display:none;">
+											<div class="row">
+												<div class="col-xs-6" style="text-align:right; color:white;"><strong>Submit Count</strong></div>
+												<div class="col-xs-6" style="text-align:left; color:white;"><strong>Skip Count</strong></div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6" style="text-align:right; color:white;"><strong>36</strong></div>
+												<div class="col-xs-6" style="text-align:left; color:white;"><strong>20</strong></div>
+											</div>
+											<!--table  width="300px">
+												<thead>
+												  <tr>
+													<th>Submit Count</th>
+													<th>Skip Count</th>
+												  </tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>2</td>
+													</tr>
+												</tbody-->
+											</table>
+										</div>
+									</ul>
 								</div>
 							</fieldset>
 						</form>
@@ -195,5 +241,18 @@
 				</div>
 			</div>
 		</div>
+		
+		<script>
+			var c1 = document.getElementById("showT1Count");
+			function showCount1(){
+				c1.style.display = 'block';
+				setTimeout(function() { c1.style.display = 'none'; }, 5000);
+			}
+			var c2 = document.getElementById("showT2Count");
+			function showCount2(){
+				c2.style.display = 'block';
+				setTimeout(function() { c2.style.display = 'none'; }, 5000);
+			}
+		</script>
 	</body>
 </html>
