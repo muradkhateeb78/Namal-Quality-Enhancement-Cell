@@ -121,3 +121,69 @@ input[type="radio"]{
 	width: 14px;
 	height: 14px;
 }
+
+.auth .auth-box .nav-tabs .tooltiptext {
+    visibility: hidden;
+    width: 540px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 110%;
+    left: 50%;
+    margin-left: -48px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.auth .auth-box .nav-tabs .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.auth .auth-box .nav-tabs .t1:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.auth .auth-box .nav-tabs .tooltiptext2 {
+    visibility: hidden;
+    width: 540px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 110%;;
+    left: 50%;
+    margin-left: -124px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.auth .auth-box .nav-tabs .tooltiptext2::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.auth .auth-box .nav-tabs .t2:hover .tooltiptext2 {
+    visibility: visible;
+    opacity: 1;
+}

@@ -31,6 +31,8 @@
 	</head>
 	
 	<body>
+	<!--Here starts the php code-->
+	<!--Please place the files in www directories of your wamp server so that the files with a ".php" extensions can work-->
 	<?php
 		class ReaingFromDatabase
 		{
@@ -75,8 +77,10 @@
 			</div>
 			<div id="big-form" class="well auth-box">
 				<ul class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" href="#task1">Task 1</a></li>
-					<li><a data-toggle="tab" href="#task2">Task 2</a></li>
+					<li class="active t1"><a data-toggle="tab" href="#task1">Task 1</a>
+						<span class="tooltiptext">Check appropriate checkboxes relevant to following comment</span></li>
+					<li class="t2"><a data-toggle="tab" href="#task2">Task 2</a>
+						<span class="tooltiptext2">Assign Score and Select Subject and Predicte</span></li>
 				</ul>
 				
 				<div class="tab-content">
