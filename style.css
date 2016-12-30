@@ -191,24 +191,3 @@ input[type="radio"]{
     visibility: visible;
     opacity: 1;
 }
-
-.modal  {
-    /*   display: block;*/
-    padding-right: 0px;
-	background-image:url('http://www.wallpaperup.com/uploads/wallpapers/2012/08/30/12087/3574f899daef41d2f145eba13ff7840f.jpg');
-    }
-   
-    .modal-dialog {
-            top: 30%;
-                width: 100%;
-    position: absolute;
-        }
-        .modal-content {
-                border-radius: 0px;
-                border: none;
-    top: 40%;
-            }
-            .modal-body {
-                    background-color: #0f8845;
-    color: white;
-                }
