@@ -9,6 +9,25 @@
 		<title>Namal Feedback</title>
 	</head>
 	<body>
+		<?php
+			if(!empty($_POST['name'])&&!empty($_POST['email'])&&!empty($_POST['purpose'])) {
+				$name = $_POST['name'];
+				$email = $_POST['email'];
+				$purpose = $_POST['purpose'];
+				$servername="localhost";
+				$conn = new mysqli($servername, "root", "","quality_enhancement_cell");
+				if ($conn->connect_error) {
+					die("Connection failed:".$conn->connect_error);
+				}
+				else{
+					echo "yes";
+					mysqli_query($conn, "INSERT INTO downloads (name, email, purpose) VALUES ('$name', '$email', '$purpose')");
+				}
+			}else{
+				echo "no";
+			}
+			$conn->close();
+		?>
 		<div class="container auth" style="padding-top:100px;">
 			<div>
 				<h1 class="text-center" align="center">Quality Enhancement Cell
@@ -16,7 +35,7 @@
 				</h1>
 			</div>
 			<div id="big-form" class="well auth-box">
-				<form action="" method="post">
+				<form action ="" method="post">
 					<fieldset style="padding-top:10px;">
 						<div class="form-group">
 							<label>Name</label>
@@ -28,7 +47,7 @@
 						</div>
 						<div class="form-group">
 							<label>Download Purpose</label>
-							<input class="form-control inputField" id="reason" name="reason">
+							<input class="form-control inputField" id="purpose" name="purpose">
 						</div>
 						<div class="form-group" style="padding-top:10px; padding-bottom:-10px;">
 							<div align="center">
