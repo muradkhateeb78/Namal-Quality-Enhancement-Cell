@@ -35,7 +35,7 @@
 					<fieldset style="padding-top:10px;">
 						<div class="form-group">
 							<label>Name</label>
-							<input class="form-control inputField" id="name" name="name" pattern="[A-Za-z]{3,}" title="Please provide a correct name." required>
+							<input class="form-control inputField" id="name" name="name" pattern=".{3,}" title="Please provide a correct name." required>
 						</div>
 						<div class="form-group">
 							<label>Email</label>
