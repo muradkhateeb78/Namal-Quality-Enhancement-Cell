@@ -20,13 +20,9 @@
 					die("Connection failed:".$conn->connect_error);
 				}
 				else{
-					echo "yes";
 					mysqli_query($conn, "INSERT INTO downloads (name, email, purpose) VALUES ('$name', '$email', '$purpose')");
 				}
-			}else{
-				echo "no";
 			}
-			$conn->close();
 		?>
 		<div class="container auth" style="padding-top:100px;">
 			<div>
