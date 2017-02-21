@@ -1,14 +1,18 @@
 <html>
 	<?php
 		
-		if(empty($_SESSION)) // if the session not yet started 
-	   	session_start();
-
+		if(empty($_SESSION)){ // if the session not yet started 
+			session_start();
+		}
 		if(!isset($_SESSION['number'])) { //if not yet logged in
 	   		header("Location: sessionQEC.php");// send to login page
 	   		exit;
 		}
 		if(!isset($_SESSION['secondnumber'])) { //if not yet logged in
+	   		header("Location: sessionQEC.php");// send to login page
+	   		exit;
+		}
+		if(!isset($_SESSION['ipWritten'])) { //if not yet logged in
 	   		header("Location: sessionQEC.php");// send to login page
 	   		exit;
 		}
@@ -34,6 +38,23 @@
 	<!--Here starts the php code-->
 	<!--Please place the files in www directories of your wamp server so that the files with a ".php" extensions can work-->
 	<?php
+		if($_SESSION['ipWritten'] == false){
+			$_SESSION['ipWritten'] = true;
+			$ipaddress = null;
+			if (getenv('HTTP_X_FORWARDED_FOR')) {
+				$pipaddress = getenv('HTTP_X_FORWARDED_FOR');
+				$ipaddress = getenv('REMOTE_ADDR');
+				echo "Your Proxy IP address is : ".$pipaddress. "(via $ipaddress)" ;
+			} else {
+				$ipaddress = getenv('REMOTE_ADDR');
+			}
+			$myfile = fopen("ipLog.txt", "a") or die("Unable to open file!");
+			$txt = "IP: $ipaddress";
+			fwrite($myfile, $txt);
+			$txt = ''.PHP_EOL;
+			fwrite($myfile, $txt);
+			fclose($myfile);
+		}
 		class ReaingFromDatabase
 		{
 				function read_Data($Query){

@@ -10,7 +10,11 @@ if(isset($_SESSION['number'])) { //if not yet logged in
 if(isset($_SESSION['secondnumber'])) { //if not yet logged in
    header("Location: QualityEnhancementCell.php");// send to login page
   exit;
-}   
+}
+if(isset($_SESSION['ipWritten'])){
+	header("Location: QualityEnhancementCell.php");
+	exit;
+} 
 ?>
 <?php
 	$conn = new mysqli($servername, "root", "","quality_enhancement_cell");
@@ -34,6 +38,7 @@ if(isset($_SESSION['secondnumber'])) { //if not yet logged in
 	$previousID=0;
 	$iterator2=0;
 	$previousID2=0;
+	$_SESSION['ipWritten'] = false;
 	$_SESSION['number']=$iterator;
 	$_SESSION['secondnumber']=$iterator2;
 	$_SESSION['array']=$my_array;
